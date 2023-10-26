@@ -1,0 +1,12 @@
+DROP TABLE IF EXISTS Document;
+
+CREATE TABLE IF NOT EXISTS Document (
+docname TEXT,
+docnumber int,
+description TEXT
+);
+
+INSERT INTO Document VALUES ('DentalBenefits', 101, 'Dental Benefits Documents');
+INSERT INTO Document VALUES ('PrescriptionBenefits', 102, 'Prescription Benefits Documents');
+INSERT INTO Document VALUES ('GlassesBenefits', 103, 'Glasses Benefits Documents');
+

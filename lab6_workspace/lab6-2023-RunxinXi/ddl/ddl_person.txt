@@ -1,0 +1,14 @@
+DROP TABLE IF EXISTS People;
+
+CREATE TABLE IF NOT EXISTS People (
+name TEXT,
+salary int,
+dependent int
+);
+
+INSERT INTO People VALUES ('Alice', 10000, 2);
+INSERT INTO People VALUES ('Tim', 20000, 3);
+INSERT INTO People VALUES ('Bob', 30000, 4);
+INSERT INTO People VALUES ('Rachel', 25000, 3);
+INSERT INTO People VALUES ('Emma', 10500, 3);
+INSERT INTO People VALUES ('George', 15600, 2);
