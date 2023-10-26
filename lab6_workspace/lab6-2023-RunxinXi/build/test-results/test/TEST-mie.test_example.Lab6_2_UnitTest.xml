@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="mie.test_example.Lab6_2_UnitTest" tests="4" skipped="0" failures="2" errors="0" timestamp="2023-10-26T00:04:06" hostname="GB144WS18" time="12.206">
+<testsuite name="mie.test_example.Lab6_2_UnitTest" tests="4" skipped="0" failures="2" errors="0" timestamp="2023-10-26T14:26:09" hostname="RS303WS34" time="11.4">
   <properties/>
-  <testcase name="testConfirmSalaries" classname="mie.test_example.Lab6_2_UnitTest" time="11.778">
+  <testcase name="testConfirmSalaries" classname="mie.test_example.Lab6_2_UnitTest" time="10.91">
     <failure message="java.lang.AssertionError" type="java.lang.AssertionError">java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:86)
 	at org.junit.Assert.assertTrue(Assert.java:41)
@@ -56,7 +56,7 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="testProcessEnded" classname="mie.test_example.Lab6_2_UnitTest" time="0.216">
+  <testcase name="testProcessEnded" classname="mie.test_example.Lab6_2_UnitTest" time="0.267">
     <failure message="java.lang.AssertionError" type="java.lang.AssertionError">java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:86)
 	at org.junit.Assert.assertTrue(Assert.java:41)
@@ -112,8 +112,8 @@
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="testCheckPausedAtFirstUserTask" classname="mie.test_example.Lab6_2_UnitTest" time="0.117"/>
-  <testcase name="testProcessStarted" classname="mie.test_example.Lab6_2_UnitTest" time="0.095"/>
+  <testcase name="testCheckPausedAtFirstUserTask" classname="mie.test_example.Lab6_2_UnitTest" time="0.109"/>
+  <testcase name="testProcessStarted" classname="mie.test_example.Lab6_2_UnitTest" time="0.114"/>
   <system-out><![CDATA[### Starting test: testConfirmSalaries ###
 loading driver..
 driver loading complete.

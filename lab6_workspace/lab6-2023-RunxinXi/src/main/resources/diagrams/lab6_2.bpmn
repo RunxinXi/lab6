@@ -24,7 +24,9 @@
       <serviceTask id="servicetask3" name="New Document for Dependents" activiti:class="mie.example.NewDocumentServiceTask">
         <multiInstanceLoopCharacteristics isSequential="false" activiti:collection="documentList" activiti:elementVariable="currentDocInstance"></multiInstanceLoopCharacteristics>
       </serviceTask>
-      <serviceTask id="servicetask4" name="Dependet co-payment" activiti:class="mie.example.CalculateCoPaymentServiceTask"></serviceTask>
+      <serviceTask id="servicetask4" name="Dependet co-payment" activiti:class="mie.example.CalculateCoPaymentServiceTask">
+        <multiInstanceLoopCharacteristics isSequential="false" activiti:collection="coPaymentList" activiti:elementVariable="currentCoPaymentInstance"></multiInstanceLoopCharacteristics>
+      </serviceTask>
       <parallelGateway id="parallelgateway1" name="Parallel Gateway"></parallelGateway>
       <parallelGateway id="parallelgateway2" name="Parallel Gateway"></parallelGateway>
       <sequenceFlow id="flow8" sourceRef="servicetask2" targetRef="parallelgateway1"></sequenceFlow>
@@ -36,17 +38,12 @@
     </subProcess>
     <serviceTask id="servicetask5" name="Get Document List" activiti:class="mie.example.GetDocumentListServiceTask"></serviceTask>
     <sequenceFlow id="flow14" sourceRef="servicetask5" targetRef="eventsubprocess1"></sequenceFlow>
+    <serviceTask id="servicetask6" name="Get Document List" activiti:class="mie.example.GetDocumentListServiceTask"></serviceTask>
     <textAnnotation id="textannotation1">
       <text>For the user entered number of persons</text>
     </textAnnotation>
     <association id="association1" sourceRef="textannotation1" targetRef="eventsubprocess1" associationDirection="None"></association>
-    <textAnnotation id="textannotation2">
-      <text>Enter your text here</text>
-    </textAnnotation>
     <association id="association2" sourceRef="textannotation2" targetRef="servicetask3" associationDirection="None"></association>
-    <textAnnotation id="textannotation3">
-      <text>Enter your text here</text>
-    </textAnnotation>
     <association id="association3" sourceRef="textannotation3" targetRef="servicetask4" associationDirection="None"></association>
     <textAnnotation id="textannotation4">
       <text>For each dependent and document</text>
@@ -100,6 +97,9 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="servicetask5" id="BPMNShape_servicetask5">
         <omgdc:Bounds height="55.0" width="105.0" x="305.0" y="190.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="servicetask6" id="BPMNShape_servicetask6">
+        <omgdc:Bounds height="55.0" width="105.0" x="357.0" y="530.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="textannotation1" id="BPMNShape_textannotation1">
         <omgdc:Bounds height="50.0" width="100.0" x="467.0" y="170.0"></omgdc:Bounds>

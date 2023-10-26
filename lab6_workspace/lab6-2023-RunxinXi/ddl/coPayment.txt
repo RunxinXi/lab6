@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS CoPayment;
+
+CREATE TABLE CoPayment (
+    personName VARCHAR(255),
+    dependentNumber INT,
+    coPayAmount DOUBLE,
+    PRIMARY KEY (personName, dependentNumber)
+);
+

@@ -40,6 +40,8 @@ public class Lab6_2_UnitTest extends LabBaseUnitTest {
 		// form fields are filled using a map from form field ids to values
 		HashMap<String, String> formEntries = new HashMap<String, String>();
 		formEntries.put("num_rows", "3");
+		formEntries.put("newSalary", "50000"); // Example value
+	    formEntries.put("dependentNumber", "2");
 		
 		// checks that the task's form fields have been assigned
 		// get the user task (Pause Task)
@@ -51,6 +53,18 @@ public class Lab6_2_UnitTest extends LabBaseUnitTest {
 		flowableContext.getFormService().submitTaskFormData(proposalsTask.getId(), formEntries);
 	}
 	
+	@Test
+	public void testCoPaymentCalculation() {
+	    startProcess();
+	    submitFormData();
+	    
+	    // Fetch the calculated co-payment from the process instance
+	    Double coPayAmount = (Double) flowableContext.getRuntimeService().getVariable(processInstance.getId(), "coPayAmount");
+	    
+	    // Verify the co-payment calculation
+	    Double expectedCoPay = 50000 * 0.0003; // 0.03% of the new salary
+	    assertTrue(coPayAmount.equals(expectedCoPay));
+	}
 	
 	@Test
 	public void testProcessStarted() {

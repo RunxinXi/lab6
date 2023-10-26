@@ -19,17 +19,33 @@ import org.flowable.task.api.Task;				// using user task
 import org.junit.BeforeClass;					// using annotation BeforeClass for the filename of the linked BPMN diagram
 import org.junit.Test;							// using annotation Test for JavaUnitTest
 import org.springframework.core.annotation.Order;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
+import java.util.Collection;
+import java.util.Arrays;
 
 import edu.toronto.dbservice.exceptions.SQLExceptionHandler;	// Handling SQL exceptions
 import edu.toronto.dbservice.config.MIE354DBHelper;				// Handling dll file for database
 	
 import edu.toronto.dbservice.types.Person;		// java type Person
 
+@RunWith(Parameterized.class)
 public class Lab6_1A_UnitTest extends LabBaseUnitTest {
 
 	@BeforeClass
 	public static void setupFile() {
 		filename = "src/main/resources/diagrams/lab6_1A.bpmn";
+	}
+	private int numRows;
+	public Lab6_1A_UnitTest(int numRows) {
+	    this.numRows = numRows;
+	}
+	@Parameters
+	public static Collection<Object[]> data() {
+	    return Arrays.asList(new Object[][] {
+	        { 1 }, { 2 }, { 3 }, { 4 } // You can add more values as needed
+	    });
 	}
 
 	public void submitFormData() {
@@ -39,7 +55,8 @@ public class Lab6_1A_UnitTest extends LabBaseUnitTest {
 
 		// form fields are filled using a map from form field ids to values
 		HashMap<String, String> formEntries = new HashMap<String, String>();
-		formEntries.put("num_rows", "2");
+		//formEntries.put("num_rows", "2");
+		formEntries.put("num_rows", String.valueOf(numRows));
 		
 		// checks that the task's form fields have been assigned
 		// get the user task (Pause Task)
